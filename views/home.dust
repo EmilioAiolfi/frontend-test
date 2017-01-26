@@ -1,0 +1,6 @@
+{>"skeleton"/}
+{<stylesheet}{/stylesheet}
+{<mainContent}
+    <div id="home">{markup|s}</div>
+{/mainContent}
+{<javascript}{/javascript}
