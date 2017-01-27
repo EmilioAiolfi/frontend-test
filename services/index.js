@@ -1,3 +1,3 @@
 module.exports = {
-    templatePath: require("./templatePath.js")
+  templatePath: require('./templatePath.js')
 };

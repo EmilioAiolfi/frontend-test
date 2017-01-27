@@ -1,9 +1,7 @@
-var path = require("path");
+import path from 'path';
 
 module.exports = {
-    getFilenameByRoute: function(routePath, extension) {
-        var filename = path.normalize(routePath).replace(/\/$/, "") + "." + extension;
-
-        return filename;
-    }
+  getFilenameByRoute: (routePath, extension) => {
+    return path.normalize(routePath).replace(/\/$/, '') + '.' + extension;
+  }
 };
