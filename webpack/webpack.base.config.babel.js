@@ -19,64 +19,57 @@ const configBase = {
       'history'
     ]
   },
-  
+
   output: {
     path: path.resolve(__dirname, '../public', 'static'),
     publicPath: '/static/',
 
   },
-  
+
   module: {
 
-    preLoaders: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loader: 'eslint'
-      }
-    ],
+    preLoaders: [{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      loader: 'eslint'
+    }],
 
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          cacheDirectory: 'babel_cache',
-          presets: ['airbnb', 'es2015', 'react'],
-          plugins: [
-            'transform-runtime',
-            'transform-object-rest-spread'
-          ],
-          env: {
-            development: {
-              presets: ['react-hmre']
-            },
-            production: {
-              plugins: [
-                'transform-react-remove-prop-types',
-                'transform-react-constant-elements',
-                'transform-react-inline-elements'
-              ]
-            }
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        cacheDirectory: 'babel_cache',
+        presets: ['airbnb', 'es2015', 'react'],
+        plugins: [
+          'transform-runtime',
+          'transform-object-rest-spread'
+        ],
+        env: {
+          development: {
+            presets: ['react-hmre']
+          },
+          production: {
+            plugins: [
+              'transform-react-remove-prop-types',
+              'transform-react-constant-elements',
+              'transform-react-inline-elements'
+            ]
           }
         }
-      },
-      {
-        test: /\.scss$/,
-        exclude: /src/,
-        loaders: ['style', 'css', 'scss']
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.(jpg|png|ttf|eot|woff|woff2)$/,
-        exclude: /node_modules/,
-        loader: 'file-loader!url-loader?limit=100000'
       }
-    ]
+    }, {
+      test: /\.scss$/,
+      exclude: /src/,
+      loaders: ['style', 'css', 'scss']
+    }, {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    }, {
+      test: /\.(jpg|png|ttf|eot|woff|woff2)$/,
+      exclude: /node_modules/,
+      loader: 'file-loader!url-loader?limit=100000'
+    }]
   },
 
   resolve: {
@@ -86,7 +79,7 @@ const configBase = {
 
   sassLoader: {
     sourceMap: true,
-    includePaths: [ path.resolve(__dirname, '../src', 'style') ]
+    includePaths: [path.resolve(__dirname, '../src', 'style')]
   },
 
   plugins: [
@@ -96,25 +89,25 @@ const configBase = {
       publicPath: '/static/',
       writeToFileEmit: true
     }),
-    
+
     new SvgStore.Options({
       svgoOptions: {
-        plugins: [
-          { removeTitle: true }
-        ]
+        plugins: [{
+          removeTitle: true
+        }]
       }
     }),
-    
+
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
-    
+
     new webpack.NoErrorsPlugin(),
     new WebpackNotifierPlugin(),
   ]
-  
+
 };
 
 
