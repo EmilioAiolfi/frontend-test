@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {+headContent/}
     <title>Catho</title>
-    {+stylesheet/}
+    {+blockStyleBase}
+      <link rel="stylesheet" href="{styleBundle}">
+      {+blockStyle/}
+    {/blockStyleBase}
   </head>
   <body>
     <div id="catho-webapp">
-       {+mainContent/}
+       {+blockContentMain/}
     </div>
-    {+javascript/}
+    {+blockScriptBase}
+      <script src="{vendorBundle}"></script>
+      <script src="{jsBundle}"></script>
+      {+blockScript /}
+    {/blockScriptBase}
   </body>
 </html>

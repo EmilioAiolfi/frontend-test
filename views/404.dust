@@ -1,6 +1,6 @@
 {>"skeleton"/}
-{<stylesheet}{/stylesheet}
-{<mainContent}
+{<blockStyle}{/blockStyle}
+{<blockContentMain}
   <div id="not-found">{markup|s}</div>
-{/mainContent}
-{<javascript}{/javascript}
+{/blockContentMain}
+{<blockScript}{/blockScript}
