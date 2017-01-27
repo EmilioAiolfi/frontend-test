@@ -1,0 +1,6 @@
+{>"skeleton"/}
+{<stylesheet}{/stylesheet}
+{<mainContent}
+    <div id="chat">{markup|s}</div>
+{/mainContent}
+{<javascript}{/javascript}
