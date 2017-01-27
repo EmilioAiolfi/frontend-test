@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "NODE_ENV=production babel-node app.js",
+    "start-dev-server": "NODE_ENV=development babel-node app.js",
+    "build": "NODE_ENV=production webpack -p",
+    "lint": "eslint -c .eslintrc . --ext .js,.jsx; exit 0",
     "startNodemon": "nodemon app.js"
   },
   "author": "",
