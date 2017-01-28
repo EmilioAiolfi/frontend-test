@@ -12,7 +12,7 @@ trim_trailing_whitespace = true
 
 [*.md]
 max_line_length = 0
-trim_trailing_whitespace = false
+trim_trailing_whitespace = true
 
 [{.travis.yml,package.json}]
 indent_size = 2
