@@ -1,0 +1,64 @@
+// ==========================================================================
+// Header
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Settings Variables - (Component Settings Default)
+//  2. Settings base - (Important settings and overwite default settings )
+//  3. Content
+
+//== 1. Settings Variables
+$footer-width:            100% !default;
+$footer-height:           40px !default;
+$footer-bg-color:         linear-gradient(#dddddd, #f2f2f2);
+$footer-brand-height:     100% !default;
+$footer-logo-height:      30px !default;
+$footer-list-item-border: 1px solid #d5d5d5;
+
+
+//== 2. Settings base
+@import 'base';
+
+//== 3. Content
+.footer {
+  z-index: 0;
+  width: $footer-width;
+  height: $footer-height;
+  background: $footer-bg-color;
+}
+
+.brand {
+  float: left;
+  margin: 0;
+  @extend %holder-vertical-middle;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  height: $footer-logo-height;
+  text-align: center;
+  .text {
+      font: 0/0 serif;
+      text-shadow: none;
+      color: transparent;
+  }
+  img { max-width: 100%; }
+}
+
+.footer-list {
+  font-size: 12px;
+  display: inline-block;
+
+  .footer-list-item {
+    display: inline-block;
+    margin: 3px 0;
+    padding: 0 13px;
+    white-space: nowrap;
+    border-right: $footer-list-item-border;
+    &:last-child {
+      border-right: 0; 
+    }
+  }
+}
