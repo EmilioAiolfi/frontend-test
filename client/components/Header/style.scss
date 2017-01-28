@@ -1,0 +1,62 @@
+// ==========================================================================
+// Header
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Settings Variables - (Component Settings Default)
+//  2. Settings base - (Important settings and overwite default settings )
+//  3. Content
+
+//== 1. Settings Variables
+$header-width: 100%;
+$header-height: 71px;
+$header-bg-color: #FFF;
+$header-brand-width: 110px;
+$header-brand-height: 100%;
+$header-logo-height: 45px;
+
+//== 2. Settings base
+@import 'base';
+
+//== 3. Content
+.header {
+  z-index: 0;
+  width: $header-width;
+  height: $header-height;
+  background: $header-bg-color;
+}
+
+.brand {
+  float: left;
+  margin: 0;
+  @extend %holder-vertical-middle;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  height: $header-logo-height;
+  text-align: center;
+  .text {
+      font: 0/0 serif;
+      text-shadow: none;
+      color: transparent;
+  }
+  img { max-width: 100%; }
+}
+
+.settings {
+  float: right;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+
+  .brand,
+  .settings {
+    flex: 0 0 64px;
+  }
+
+}
