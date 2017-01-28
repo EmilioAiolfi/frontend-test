@@ -1,0 +1,44 @@
+// ==========================================================================
+// Global
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Settings Variables - (Component Settings Default)
+//  2. Settings base - (Important settings and overwite default settings )
+//  3. Content
+
+
+
+//== 2. Settings base
+// ==========================================================================
+@import 'base';
+
+
+//== 3. Content
+:global {
+  @import '~normalize.css/normalize';
+
+  html, body {
+      margin: 0;
+      height: 100%;
+      min-height: 100%;
+  }
+
+  body {
+    background: $body-bg;
+    color: $text-color;
+  }
+  
+  a {
+    color: $link-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: $link-hover-decoration;
+    }
+    &[disabled] {
+      color: $link-color-disable !important;
+    }
+  }
+
+}
