@@ -1,30 +1,30 @@
 'use strict';
 
-import express from 'express';
-import http from 'http';
 import path from 'path';
+import http from 'http';
+import express from 'express';
 import shellArguments from 'shell-arguments';
+import favicon from 'serve-favicon';
 import compress from 'compression';
 import cons from 'consolidate';
-import {
-  webpackMiddleware,
-  webpackHotMiddleware
-} from './webpack/webpackMiddleware';
-
-import CONFIG from "./config";
+import { webpackMiddleware, webpackHotMiddleware } from './webpack/webpackMiddleware';
+import routes from './routes';
+import CONFIG from './config';
 
 global.CONFIG = CONFIG;
 
 const app = new express();
 const isDev = CONFIG.ENV === 'development';
 
-// global.CONFIG = require("./config");
-require('./routes')(app);
+routes(app);
 
 // set the engines
 app.engine('.dust', cons.dust);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'dust');
+
+// set Favicon
+app.use(favicon(path.join(__dirname, 'public', 'static', 'favicon.ico')));
 
 // Set Static
 app.use(
