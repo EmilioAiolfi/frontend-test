@@ -1,0 +1,109 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Settings Variables - (Component Settings Default)
+//  2. Settings base - (Important settings and overwite default settings )
+//  3. Mixin
+//  4. Ripple buttons
+//  5. Flat buttons
+
+//== 1. Settings Variables
+$btn-font-weight:               normal;
+$btn-font-size:                 30px;
+$btn-text-color:                #fff;
+$btn-border-radius:             2px;
+
+$btn-default-color:             $btn-text-color;
+$btn-default-bg:                #fff;
+$btn-default-border:            darken(#fff, 5%);
+$btn-default-darker-color:      #cccccc;
+
+$btn-primary-color:            #fff;
+$btn-primary-bg:                #005DA4;
+$btn-primary-border:            darken(#005DA4, 5%);
+$btn-primary-darker-color:      #005DA4;
+
+$button-transition-time:        .15s;
+$ripple-effect-duration:        .3s;
+$ripple-effect-bg:              rgba(255, 255, 255, 0.3);
+$ripple-effect-final-scale:     2.5;
+
+$flat-btn-padding:              8px;
+$flat-btn-border-size:          1px;
+$flat-btn-active-offset:        1px;
+$flat-ripple-effect-color:      #999;
+$flat-btn-classes: (
+  ('default', $btn-default-bg, $btn-default-color, $btn-default-darker-color, $flat-btn-border-size, #999),
+  ('primary', $btn-primary-bg, $btn-primary-color, $btn-primary-darker-color, $flat-btn-border-size, null),
+);
+
+//== 2. Settings base
+@import 'base';
+
+//== 3. Mixin
+// ==========================================================================
+@mixin flat-btn($name, $bg, $color, $border-color, $border-size: $flat-btn-border-size, $flat-ripple-effect-color: null) {
+  &.flat-btn-#{$name} {
+    background-color: $bg;
+    color: $color;
+    border: $border-size solid $border-color;
+    
+    @if ($flat-ripple-effect-color) {
+      .ripple-effect {
+        background: $flat-ripple-effect-color !important;
+      }
+    }
+    
+    
+  }
+}
+
+//== 4. Ripple buttons
+// ==========================================================================
+.ripple-btn {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  .ripple-effect {
+    display: block;
+    position: absolute;
+    background: $ripple-effect-bg;
+    border-radius: 100%;
+    transform: scale(0);
+
+    &.active {
+      transition: opacity $ripple-effect-duration linear, transform $ripple-effect-duration linear;
+      opacity: 0;
+      transform: scale($ripple-effect-final-scale);
+    }
+  }
+  
+  
+}
+
+//== 5. Flat buttons
+// ==========================================================================
+.flat-btn {
+  position: relative;
+  padding: $flat-btn-padding;
+  border-radius: $btn-border-radius;
+  font-size: $btn-font-size;
+  cursor: pointer;
+
+  &:active,
+  &.active {
+    top: $flat-btn-active-offset;
+    outline: none;
+    box-shadow: none;
+  }
+
+  @each $btn in $flat-btn-classes {
+    @include flat-btn(nth($btn, 1), nth($btn, 2), nth($btn, 3), nth($btn, 4), nth($btn, 5), nth($btn, 6));
+  }
+  
+}
+
