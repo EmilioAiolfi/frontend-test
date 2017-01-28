@@ -12,63 +12,65 @@
 //  4. Structure
 //  5. Header
 //  6. Main
+//  6. Footer
+//  6. Buttons
 
 
 //== 1. Colors
 // ==========================================================================
 
-$primary-color:           $catho-base !default;
-$primary-color-light:     $catho-darken-1 !default;
-$primary-color-dark:      $catho-darken-4 !default;
+$primary-color:           $catho-base;
+$primary-color-light:     $catho-darken-1;
+$primary-color-dark:      $catho-darken-4;
 
-$secondary-color:         $grey-base !default;
-$secondary-color-light:   $grey-lighten-4 !default;
-$secondary-color-medium:  $grey-darken-2  !default;
-$secondary-color-dark:    $grey-darken-3 !default;
+$secondary-color:         $grey-base;
+$secondary-color-light:   $grey-lighten-4;
+$secondary-color-medium:  $grey-darken-2 ;
+$secondary-color-dark:    $grey-darken-3;
 
-$success-color:           $green-base !default;
-$error-color:             $red-base !default;
-$white-color:             $shades-white !default;
+$success-color:           $green-base;
+$error-color:             $red-base;
+$white-color:             $shades-white;
 
 
 //== 2. Scaffolding
 // ==========================================================================
 
-$body-bg:                 $grey-lighten-4 !default;
-$text-color:              $secondary-color-dark !default;
-$link-color:              $primary-color!default;
-$link-hover-color:        darken($link-color, 15%) !default;
-$link-hover-decoration:   underline !default;
-$link-color-disable:      lighten($text-color, 15%) !default;
+$body-bg:                 $grey-lighten-4;
+$text-color:              $secondary-color-dark;
+$link-color:              $primary-color;
+$link-hover-color:        darken($link-color, 15%);
+$link-hover-decoration:   underline;
+$link-color-disable:      lighten($text-color, 15%);
 
 
 //== 3. Typography
 // ==========================================================================
 
-$font-family-roboto:      Helvetica, Arial, sans-serif !default;
-$font-family-base:        $font-family-roboto !default;
+$font-family-roboto:      Arial, Helvetica, sans-serif;
+$font-family-base:        $font-family-roboto;
 
-$font-size-base:          14px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-base:          14px;
+$font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 
-$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
-$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
-$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
-$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h1:            floor(($font-size-base * 2.6)); // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)); // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5:            $font-size-base;
+$font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
 
 
 //== 4. Structure
 // ==========================================================================
-$app-width:                 100% !default;
-$app-container-height:      100vh !default;
-$app-fixed-padding-header:  71px !default;
+$app-width:                 100%;
+$app-container-height:      100vh;
+$app-fixed-padding-header:  71px;
 
-$app-header-bg-color:       $white-color !default;
-$app-header-font-color:     $secondary-color-medium !default;
-$app-header-border-bottom:  1px solid $secondary-color-light !default;
+$app-header-bg-color:       $white-color;
+$app-header-font-color:     $secondary-color-medium;
+$app-header-border-bottom:  1px solid $secondary-color-light;
 
 $app-footer-bg-color:       linear-gradient($grey-lighten-2, $grey-lighten-4);
 $app-footer-font-color:     $secondary-color-medium;
@@ -77,22 +79,53 @@ $app-footer-border-top:     1px solid $primary-color;
 
 //== 5. Header
 // ==========================================================================
-$header-width:              100% !default;
-$header-height:             $app-fixed-padding-header !default;
-$header-bg-color:           $app-header-bg-color !default;
-$header-logo-height:        45px !default;
+$header-width:              100%;
+$header-height:             $app-fixed-padding-header;
+$header-bg-color:           $app-header-bg-color;
+$header-logo-height:        45px;
 
 
 //== 6. Main
 // ==========================================================================
-$main-bg-color:           $white-color !default;
+$main-bg-color:             $white-color;
 
 
 //== 7. Footer
 // ==========================================================================
-$footer-width:              100% !default;
-$footer-height:             40px !default;
-$footer-bg-color:           $app-footer-bg-color !default;
-$footer-logo-height:        30px !default;
-$footer-list-item-border:   $grey-lighten-1 !default;
+$footer-width:              100%;
+$footer-height:             40px;
+$footer-bg-color:           $app-footer-bg-color;
+$footer-logo-height:        30px;
+$footer-list-item-border:   $grey-lighten-1;
 
+
+//== 8. Buttons
+// ==========================================================================
+$btn-font-weight:               normal;
+$btn-text-color:                $grey-darken-4;
+$btn-font-size:                 16px;
+$btn-border-radius:             2px;
+
+$btn-default-color:             $grey-darken-4;
+$btn-default-bg:                $white-color;
+$btn-default-border:            darken($primary-color, 5%);
+$btn-default-darker-color:      $grey-lighten-1;
+
+$btn-primary-color:             $white-color;
+$btn-primary-bg:                $primary-color;
+$btn-primary-border:            darken($btn-primary-bg, 5%);
+$btn-primary-darker-color:      $primary-color;
+
+$btn-transition-time:           .15s;
+$ripple-effect-duration:        .3s;
+$ripple-effect-bg:              rgba(255, 255, 255, 0.3);
+$ripple-effect-final-scale:     2.5;
+
+$flat-btn-padding:              8px;
+$flat-btn-border-size:          1px;
+$flat-btn-active-offset:        1px;
+$flat-ripple-effect-color:      $catho-lighten-3;
+$flat-btn-classes: (
+  ('default', $btn-default-bg, $btn-default-color, $btn-default-darker-color, $flat-btn-border-size, $flat-ripple-effect-color),
+  ('primary', $btn-primary-bg, $btn-primary-color, $btn-primary-darker-color, $flat-btn-border-size, null),
+);

@@ -9,12 +9,12 @@
 //  3. Content
 
 //== 1. Settings Variables
-$header-width: 100%;
-$header-height: 71px;
-$header-bg-color: #FFF;
-$header-brand-width: 110px;
-$header-brand-height: 100%;
-$header-logo-height: 45px;
+$header-width:        100% !default;
+$header-height:       71px !default;
+$header-bg-color:   #FFF !default;
+$header-brand-width:  110px !default;
+$header-brand-height: 100% !default;
+$header-logo-height:  45px !default;
 
 //== 2. Settings base
 @import 'base';

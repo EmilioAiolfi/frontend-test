@@ -1,5 +1,5 @@
 // Libs
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Icon from '../IconsSVG';
 
 // Style
@@ -7,17 +7,6 @@ import styles from './style.scss';
 
 const Footer = React.createClass({
   displayName: 'Footer',
-
-  propTypes: {
-    brandName : PropTypes.string.isRequired,
-    onClick:  PropTypes.func.isRequired
-  },
-
-  getDefaultProps() {
-    return {
-      brandName : ''
-    };
-  },
 
   getInitialState() {
     return { sidebarOpen: false };

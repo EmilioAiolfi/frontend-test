@@ -11,34 +11,34 @@
 //  5. Flat buttons
 
 //== 1. Settings Variables
-$btn-font-weight:               normal;
-$btn-font-size:                 30px;
-$btn-text-color:                #fff;
-$btn-border-radius:             2px;
+$btn-font-weight:               normal !default;
+$btn-font-size:                 30px !default;
+$btn-text-color:                #fff !default;
+$btn-border-radius:             2px !default;
 
-$btn-default-color:             $btn-text-color;
-$btn-default-bg:                #fff;
-$btn-default-border:            darken(#fff, 5%);
-$btn-default-darker-color:      #cccccc;
+$btn-default-color:             $btn-text-color !default;
+$btn-default-bg:                #fff !default;
+$btn-default-border:            darken(#fff, 5%) !default;
+$btn-default-darker-color:      #cccccc !default;
 
-$btn-primary-color:            #fff;
-$btn-primary-bg:                #005DA4;
-$btn-primary-border:            darken(#005DA4, 5%);
-$btn-primary-darker-color:      #005DA4;
+$btn-primary-color:             #fff !default;
+$btn-primary-bg:                #005DA4 !default;
+$btn-primary-border:            darken(#005DA4, 5%) !default;
+$btn-primary-darker-color:      #005DA4 !default;
 
-$button-transition-time:        .15s;
-$ripple-effect-duration:        .3s;
-$ripple-effect-bg:              rgba(255, 255, 255, 0.3);
-$ripple-effect-final-scale:     2.5;
+$button-transition-time:        .15s !default;
+$ripple-effect-duration:        .3s !default;
+$ripple-effect-bg:              rgba(255, 255, 255, 0.3) !default;
+$ripple-effect-final-scale:     2.5 !default;
 
-$flat-btn-padding:              8px;
-$flat-btn-border-size:          1px;
-$flat-btn-active-offset:        1px;
-$flat-ripple-effect-color:      #999;
+$flat-btn-padding:              8px !default;
+$flat-btn-border-size:          1px !default;
+$flat-btn-active-offset:        1px !default;
+$flat-ripple-effect-color:      #999 !default;
 $flat-btn-classes: (
   ('default', $btn-default-bg, $btn-default-color, $btn-default-darker-color, $flat-btn-border-size, #999),
   ('primary', $btn-primary-bg, $btn-primary-color, $btn-primary-darker-color, $flat-btn-border-size, null),
-);
+) !default;
 
 //== 2. Settings base
 @import 'base';

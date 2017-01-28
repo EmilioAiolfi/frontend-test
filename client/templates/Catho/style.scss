@@ -9,19 +9,19 @@
 //  3. Content
 
 //== 1. Settings Variables
-$app-width: 100%;
-$app-container-height: 100vh;
-$app-fixed-padding-header: 71px;
+$app-width:                 100% !default;
+$app-container-height:      100vh !default;
+$app-fixed-padding-header:  71px !default;
 
-$app-header-bg-color: #FFF;
-$app-header-font-color: #666;
-$app-header-border-bottom: 1px solid #f5f5f5;
+$app-header-bg-color:     #FFF !default;
+$app-header-font-color:   #666 !default;
+$app-header-border-bottom:  1px solid #f5f5f5 !default;
 
-$main-bg-color: #fff;
+$main-bg-color:            #fff !default;
 
-$app-footer-bg-color: linear-gradient(#ddd, #f2f2f2);
-$app-footer-font-color: #666;
-$app-footer-border-top: 1px solid #005da4;
+$app-footer-font-color:    #666 !default;
+$app-footer-border-top:      1px solid #005da4 !default;
+$app-footer-bg-color:        linear-gradient(#ddd, #f2f2f2) !default;
 
 //== 2. Settings base
 @import 'base';

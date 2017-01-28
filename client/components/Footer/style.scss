@@ -11,10 +11,10 @@
 //== 1. Settings Variables
 $footer-width:            100% !default;
 $footer-height:           40px !default;
-$footer-bg-color:         linear-gradient(#dddddd, #f2f2f2);
+$footer-bg-color:         linear-gradient(#dddddd, #f2f2f2) !default;
 $footer-brand-height:     100% !default;
 $footer-logo-height:      30px !default;
-$footer-list-item-border: 1px solid #d5d5d5;
+$footer-list-item-border: 1px solid #d5d5d5 !default;
 
 
 //== 2. Settings base

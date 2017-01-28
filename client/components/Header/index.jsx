@@ -5,12 +5,13 @@ import Icon from '../IconsSVG';
 // Style
 import styles from './style.scss';
 
+import { FlatButton } from '../Buttons';
+
 const Header = React.createClass({
   displayName: 'Header',
 
   propTypes: {
-    brandName : PropTypes.string.isRequired,
-    onClick:  PropTypes.func.isRequired
+    brandName : PropTypes.string.isRequired
   },
 
   getDefaultProps() {
@@ -24,6 +25,8 @@ const Header = React.createClass({
   },
 
   render() {
+    const rippleOn = true;
+
     return (
       <header className={ styles['header'] }>
 
@@ -34,9 +37,8 @@ const Header = React.createClass({
           </a>
         </h1>
 
-
         <div className={ styles['settings'] }>
-          <button className={ styles['btn'] } onClick={this.props.onClick}>{'Login'}</button>
+          <FlatButton color="default" ripple={ rippleOn } title={ 'Login' }>{ 'Login' }</FlatButton>
         </div>
 
       </header>
