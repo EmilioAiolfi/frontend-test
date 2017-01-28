@@ -1,0 +1,86 @@
+// ==========================================================================
+// Structure
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Settings Variables - (Component Settings Default)
+//  2. Settings base - (Important settings and overwite default settings )
+//  3. Content
+
+//== 1. Settings Variables
+$app-width: 100%;
+$app-container-height: 100vh;
+$app-fixed-padding-header: 71px;
+
+$app-header-bg-color: #FFF;
+$app-header-font-color: #666;
+$app-header-border-bottom: 1px solid #f5f5f5;
+
+$main-bg-color: #fff;
+
+$app-footer-bg-color: linear-gradient(#ddd, #f2f2f2);
+$app-footer-font-color: #666;
+$app-footer-border-top: 1px solid #005da4;
+
+//== 2. Settings base
+@import 'base';
+
+//== 3. Content
+.app {
+  width: $app-width;
+  position: relative;
+  .app-container {
+    min-height: calc(#{$app-container-height} - 122px);
+  }
+}
+
+.app-header {
+  @extend %app-content;
+  background-color: $app-header-bg-color;
+  border-bottom: $app-header-border-bottom;
+  color: $app-header-font-color;
+}
+
+.app-header-wrapper {
+  @extend %app-content-holder;
+}
+
+.app-content {
+  width: 100%;
+  height: 100%;
+}
+
+.app-content-wrapper {
+  @extend %app-content-holder;
+}
+
+.main {
+  width: 100%;
+  background: $main-bg-color;
+  overflow: auto;
+  position: relative
+}
+
+.app-footer {
+  @extend %app-content;
+  padding: 5px 0;
+  background: $app-footer-bg-color;
+  border-top: $app-footer-border-top;
+  color: $app-footer-font-color;
+}
+
+.app-footer-wrapper {
+  @extend %app-content-holder;
+}
+
+.fixed {
+  padding-top: $app-fixed-padding-header;
+  .app-header {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
