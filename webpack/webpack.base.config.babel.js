@@ -7,7 +7,7 @@ import ManifestPlugin from 'webpack-manifest-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import SvgStore from 'webpack-svgstore-plugin';
 
-
+console.log(path.resolve(__dirname, '../client', 'styles'));
 const configBase = {
   context: __dirname,
   entry: {
@@ -60,7 +60,7 @@ const configBase = {
       }
     }, {
       test: /\.scss$/,
-      exclude: /src/,
+      exclude: /client/,
       loaders: ['style', 'css', 'scss']
     }, {
       test: /\.css$/,
@@ -73,13 +73,13 @@ const configBase = {
   },
 
   resolve: {
-    modulesDirectories: ['./src', './node_modules'],
+    modulesDirectories: ['./client', './node_modules'],
     extensions: ['', '.webpack.js', '.js', '.jsx', '.scss', '.json'],
   },
 
   sassLoader: {
     sourceMap: true,
-    includePaths: [path.resolve(__dirname, '../src', 'style')]
+    includePaths: [path.resolve(__dirname, '../client', 'styles')]
   },
 
   plugins: [
