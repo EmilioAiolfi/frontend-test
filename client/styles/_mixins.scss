@@ -5,6 +5,7 @@
 // Table of Contents:
 //
 //  1. Excerpt
+//  2. Breakpoint
 
 
 //== Excerpt
@@ -40,6 +41,34 @@
       height: 50px;
       width: 100%;
       z-index: 1;
+    }
+  }
+}
+
+
+//== Breakpoint
+// ==========================================================================
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px
+);
+
+@mixin breakpoint($name, $rule: min, $mq-breakpoints: $breakpoints) {
+  @if not map-has-key($mq-breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    $name: map_get($breakpoints, $name);
+    @if $rule == max {
+        $name: $name - 1px;
+    }
+    @media (#{$rule}-width: $name) {
+      @content;
     }
   }
 }
