@@ -36,7 +36,7 @@ $white-color:             $shades-white;
 //== 2. Scaffolding
 // ==========================================================================
 
-$body-bg:                 $grey-lighten-4;
+$body-bg:                 $white-color;
 $text-color:              $secondary-color-dark;
 $link-color:              $primary-color;
 $link-hover-color:        darken($link-color, 15%);
