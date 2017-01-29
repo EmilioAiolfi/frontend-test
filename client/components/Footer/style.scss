@@ -35,16 +35,8 @@ $footer-list-item-border: 1px solid #d5d5d5 !default;
 }
 
 .logo {
-  display: inline-block;
-  vertical-align: middle;
   height: $footer-logo-height;
-  text-align: center;
-  .text {
-      font: 0/0 serif;
-      text-shadow: none;
-      color: transparent;
-  }
-  img { max-width: 100%; }
+  @extend %holder-semantic-logo;
 }
 
 .footer-list {

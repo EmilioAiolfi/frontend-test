@@ -34,16 +34,8 @@ $header-logo-height:  45px !default;
 }
 
 .logo {
-  display: inline-block;
-  vertical-align: middle;
   height: $header-logo-height;
-  text-align: center;
-  .text {
-      font: 0/0 serif;
-      text-shadow: none;
-      color: transparent;
-  }
-  img { max-width: 100%; }
+  @extend %holder-semantic-logo;
 }
 
 .settings {
