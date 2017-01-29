@@ -1,12 +1,17 @@
 // Libs
 import React from 'react';
 
+import Chat from '../../components/Chat';
+
 const ChatContainer = React.createClass({
   displayName: 'ChatContainer',
 
   render() {
     return (
-      <h1>{' Chat Container'} </h1>
+      <div>
+        <h1>{ 'Chat Container' } </h1>
+        <Chat />
+      </div>
     );
   }
 });

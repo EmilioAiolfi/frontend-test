@@ -11,8 +11,8 @@ import ChatContainer from './containers/ChatContainer';
 
 const routes = (
   <Route path="/site/home/chat" component={ CathoTemplate }>
-    <IndexRoute component={ HomeContainer } />
-    <Route path='section1' component={ChatContainer} />
+    <IndexRoute component={ ChatContainer } />
+    <Route path='home' component={ HomeContainer } />
   </Route>
 );
 
