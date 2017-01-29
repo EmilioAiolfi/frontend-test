@@ -1,0 +1,231 @@
+// ==========================================================================
+// Chat
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Settings Variables - (Component Settings Default)
+//  2. Settings base - (Important settings and overwite default settings )
+//  3. Content
+
+//== 1. Settings Variables
+$chat-text-color:                   #666;
+$chat-bg-color:                     #fff;
+$chat-min-width:                      320px;
+$chat-max-width:                      100%;
+$chat-max-width-mq:                   530px;
+$chat-position-right:                 0;
+$chat-position-right-mq:              20px;
+$chat-body-height:                    330px;
+$chat-border:                         1px solid #DCDCDC;
+$chat-box-shadow:                     0px 0px 12px -2px #9a9a9a;
+$chat-animation-time:                 .800ms;
+$chat-toolbar-height:                 35px;
+$chat-toolbar-width:                  100%;
+$chat-toolbar-font-color:           #ffffff;
+$chat-toolbar-bg-color:             #005DA4;
+$chat-toolbar-title-width:            60%;
+$chat-toolbar-actions-width:          100% - 60%;
+$chat-toolbar-icon-transitions:       fill $chat-animation-time linear;
+$chat-toolbar-icon-hover-color:     #ffffff;
+$chat-message-bg-color:             #DDD;
+$chat-message-form-bg-color:        #f2f2f2;
+$chat-message-form-border:            1px solid #dedede;
+//== 2. Settings base
+@import 'base';
+
+//== 3. Content
+
+.chat {
+  background-color: $chat-bg-color;
+  border-left: $chat-border;
+  border-right: $chat-border;
+  border-top: $chat-border;
+  box-shadow: $chat-box-shadow;
+  max-width: $chat-max-width;
+  min-width: $chat-min-width;
+  position: fixed;
+  right: $chat-position-right;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  @include breakpoint("tablet-small") {
+    height: auto;
+    max-width: $chat-max-width-mq;
+    right: $chat-position-right-mq;
+  }
+}
+
+.chat-toolbar {
+  width: $chat-toolbar-width;
+  height: $chat-toolbar-height;
+  background-color: $chat-toolbar-bg-color;
+  color: $chat-toolbar-font-color;
+}
+
+.chat-toolbar-title,
+.chat-toolbar-actions {
+  box-sizing: border-box;
+  height: $chat-toolbar-height;
+}
+
+.chat-toolbar-title {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 14px;
+  width: $chat-toolbar-title-width;
+  font-style: italic;
+  text-align: left;
+  @include truncate($chat-toolbar-title-width);
+}
+
+.chat-toolbar-actions {
+  display: inline-block;
+  text-align: right;
+  vertical-align: middle;
+  padding: 8px;
+  width: $chat-toolbar-actions-width;
+  .chat-toolbar-icon {
+    cursor: pointer;
+    margin-right: 10px;
+    transition: $chat-toolbar-icon-transitions;
+    &:hover {
+      fill: $chat-toolbar-icon-hover-color;
+    }
+  }
+}
+
+.chat-body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  color: $chat-text-color;
+}
+
+.chat-messages-list {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10px 10px;
+  margin-top: 10px;
+  height: calc(100% - 145px);
+  font-style: italic;
+  font-size: 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  @include breakpoint("tablet-small") {
+    height: $chat-body-height;
+  }
+}
+
+.chat-message-item {
+  overflow: auto;
+  margin: 10px 0;
+  .chat-user-picture {
+    float: left;
+    width: 65px;
+    height: 65px;
+    img {
+      max-width: 100%;
+    }
+  }
+  .chat-message-content {
+    float: left;
+    background-color: $chat-message-bg-color;
+    display: block;
+    width: 73%;
+    padding: 7px;
+    position: relative;
+    margin: 0 0 0 15px;
+    &:before {
+      content: "";
+      border-style: solid;
+      display: block;
+      border-width: 7px;
+      border-color: transparent $chat-message-bg-color transparent transparent;
+      position: absolute;
+      left: -14px;
+      top: 15px;
+    }
+  }
+  .chat-message-user-info {
+    width: 30%;
+    padding: 0 4% 0 0;
+    font-size: 12px;
+    line-height: 12px;
+    position: absolute;
+    bottom: 7px;
+  }
+  .chat-message-profile-name {
+    display: block;
+  }
+  .chat-message-company-name {
+    margin: 0;
+  }
+  .chat-message-time {
+    white-space: nowrap;
+    font-size: 11px;
+    margin-top: 2px;
+    display: block;
+  }
+  .chat-message-text {
+    float: right;
+    width: 100%;
+    margin-bottom: 15px;
+      @include breakpoint("tablet-small") {
+      width: 65%;
+      margin-bottom: 0;
+    }
+  }
+  .chat-message-reading-status {
+    display: block;
+    margin-top: 10px;
+    float: left;
+    clear: both;
+  }
+  &.chat-message-type-sender {
+    .chat-user-picture {
+      float: right;
+    }
+    .chat-message-content {
+      margin: 0 15px 0 0;
+      float: right;
+      &:before {
+        border-color: transparent transparent transparent $chat-message-bg-color;
+        right: -14px;
+        left: initial;
+      }
+    }
+    .chat-message-user-info {
+      right: 5px;
+      left: initial;
+      text-align: right;
+    }
+    .chat-message-text {
+      float: left;
+    }
+  }
+}
+
+.chat-message-form {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #dedede;
+  padding: 10px;
+  .chat-message-form-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 12px;
+    color: #666;
+    resize: none;
+    margin: 0;
+    background-color: $chat-message-form-bg-color;
+    border: $chat-message-form-border;
+    box-shadow: inset 0px 0px 14px -3px #9a9a9a;
+  }
+}
