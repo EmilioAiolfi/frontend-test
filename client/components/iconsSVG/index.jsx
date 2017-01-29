@@ -26,9 +26,11 @@ const Icon = React.createClass({
   displayName: 'Icon',
 
   propTypes: {
-    glyph : PropTypes.string.isRequired,
-    height : PropTypes.number,
-    width : PropTypes.number,
+    className:  PropTypes.string,
+    fill:       PropTypes.string,
+    glyph:      PropTypes.string.isRequired,
+    height:     PropTypes.number,
+    width:      PropTypes.number
   },
 
   getDefaultProps() {
@@ -39,11 +41,14 @@ const Icon = React.createClass({
   },
 
   render() {
-    const className = 'icon';
-    const { glyph, width, height } = this.props;
-
+    const { className, fill, glyph, width, height } = this.props;
+    
+    const iconClass = cx('icon', {
+      [className]: className
+    });
+    
     return (
-      <svg className={ cx(className) } width={ width } height={ height } role='img'>
+      <svg className={ iconClass } width={ width } height={ height } fill={ fill } role='img'>
         <use xlinkHref={`#${glyph}`} />
       </svg>
     );
