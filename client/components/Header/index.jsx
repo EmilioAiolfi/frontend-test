@@ -1,11 +1,10 @@
 // Libs
 import React, { PropTypes } from 'react';
 import Icon from '../IconsSVG';
+import { FlatButton } from '../Buttons';
 
 // Style
 import styles from './style.scss';
-
-import { FlatButton } from '../Buttons';
 
 const Header = React.createClass({
   displayName: 'Header',
@@ -32,7 +31,7 @@ const Header = React.createClass({
 
         <h1 className={ styles['brand'] }>
           <a className={ styles['logo'] }>
-            <Icon glyph="icon-catho-logo" width={ 100 } height={ 45 }  />
+            <Icon glyph="icon-catho-logo" width={ 100 } height={ 45 } />
             <span className={ styles['text'] }>{ this.props.brandName }</span>
           </a>
         </h1>
