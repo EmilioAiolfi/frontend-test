@@ -1,6 +1,7 @@
 // Libs
 import React, { PropTypes } from 'react';
 import classnames from 'classnames/bind';
+import Moment from 'Moment';
 
 import Icon from '../IconsSVG';
 
@@ -19,7 +20,7 @@ const Message = React.createClass({
     statusReading:      PropTypes.bool.isRequired,
     text:               PropTypes.string.isRequired,
     time:               PropTypes.number.isRequired,
-    userId:             PropTypes.number.isRequired,
+    userID:             PropTypes.number.isRequired,
     userName:           PropTypes.string.isRequired,
     userPicture:        PropTypes.string.isRequired,
   },
@@ -27,8 +28,8 @@ const Message = React.createClass({
 
   render() {
     const {
-      perfilID, continuousMessage, userPicture,
-      userName, statusReading, companyName, text
+      perfilID, continuousMessage, userPicture, userName,
+      statusReading, companyName, text, time
     } = this.props;
 
     const sender = perfilID === 1;
@@ -54,8 +55,13 @@ const Message = React.createClass({
         height={ 15 } />
     ) : '';
 
+    const timeMessage = Moment(time)
+        .locale('pt-BR')
+        .startOf('minutes')
+        .fromNow();
+
     return (
-      <div id="1" className={ chatMessageClass }>
+      <div className={ chatMessageClass }>
         <picture className={ cx('chat-user-picture') }>
           { userPictureImage }
         </picture>
@@ -64,7 +70,7 @@ const Message = React.createClass({
           <div className={ cx('chat-message-user-info') }>
             <author className={ cx('chat-message-profile-name') }>{ userName }</author>
             <p className={ cx('chat-message-company-name') }>{ companyName }</p>
-            <span className={ cx('chat-message-time') }>{ 'enviado Agora'}</span>
+            <span className={ cx('chat-message-time') }>{ `enviado ${timeMessage}` }</span>
           </div>
           <span className={ cx('chat-message-text') }>{ text }</span>
           <div className={ cx('chat-message-reading-status') }>

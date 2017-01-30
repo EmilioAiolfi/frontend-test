@@ -13,7 +13,7 @@ let cx = classnames.bind(styles);
 
 const MessageList = React.createClass({
   displayName: 'MessageList',
-  
+
   propTypes: {
     data:     PropTypes.array.isRequired,
     loading:  PropTypes.bool.isRequired,
@@ -25,10 +25,21 @@ const MessageList = React.createClass({
       loading: true,
     };
   },
-  
+
+  componentDidUpdate() {
+    this._scrollToBottom();
+  },
+
+  _scrollToBottom() {
+    const scrollHeight = this.messageList.scrollHeight;
+    const height = this.messageList.clientHeight;
+    const maxScrollTop = scrollHeight - height;
+    this.messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+  },
+
   render() {
     const { loading, data } = this.props;
-    
+
     let component;
     const isLoading = loading;
 
@@ -45,25 +56,28 @@ const MessageList = React.createClass({
           key={ index }
           id={ item.id }
           userID={ item.user.id }
-          userName={ item.user.name }
-          userPicture={ `${CONFIG.API.USER_IMAGE_PATH}/${item.user.id}.jpg` }
           perfilID={ item.user.perfilId }
+          userName={ item.user.name }
           companyName={ item.company ? item.company.name : '' }
-          statusReading={ item.message.alreadyRead }
           text={ item.message.message }
           time={ item.message.time }
-          continuousMessage={ isContinuousMessage } />
+          statusReading={ item.message.alreadyRead }
+          continuousMessage={ isContinuousMessage }
+          userPicture={ `${CONFIG.API.USER_IMAGE_PATH}/${item.user.id}.jpg` } />
       );
     });
-    
+
     if (isLoading) {
       component = <span>{' Carregando mensagens anteriores'}</span>;
     } else {
       component = messages;
     }
-    
+
     return (
-      <div className={ cx('chat-messages-list') }>
+      <div className={ cx('chat-messages-list') }
+        ref={(div) => {
+          this.messageList = div;
+        }}>
         { component }
       </div>
     );
