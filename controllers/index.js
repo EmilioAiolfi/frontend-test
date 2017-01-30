@@ -24,9 +24,9 @@ module.exports = {
 
     // universal routing and rendering
     match({
-        routes,
-        location: req.url
-      },
+      routes,
+      location: req.url
+    },
       (err, redirectLocation, renderProps) => {
         // in case of error display the error message
         if (err) {
@@ -42,7 +42,7 @@ module.exports = {
         fs.readFile(
           path.join(CONFIG.VIEW.VIEW_PATH, filename),
           CONFIG.VIEW.ENCODING,
-          function (err, body) {
+          function (err) {
             if (err) {
               if (err.code === 'ENOENT') {
 
@@ -54,17 +54,17 @@ module.exports = {
                   );
                   // renderProps.routes[0].path
 
-                  markup = renderToString( <RouterContext { ...renderProps }/>);
-                    res.render(prevFilename, {
-                      markup,
-                      vendorBundle,
-                      jsBundle,
-                      styleBundle
-                    });
+                  markup = renderToString( <RouterContext { ...renderProps } />);
+                  res.render(prevFilename, {
+                    markup,
+                    vendorBundle,
+                    jsBundle,
+                    styleBundle
+                  });
 
                 } else {
                   // otherwise we can render a 404 page
-                  markup = renderToString( < NotFoundPage / > );
+                  markup = renderToString( <NotFoundPage /> );
                   res.status(404);
                   // render the index template with the embedded React markup
                   res.render('404', {
@@ -84,10 +84,10 @@ module.exports = {
               // generate the React markup for the current route
               if (renderProps) {
                 // if the current route matched we have renderProps
-                markup = renderToString( <RouterContext {...renderProps} />);
+                markup = renderToString( <RouterContext { ...renderProps } />);
               } else {
                 // otherwise we can render a 404 page
-                markup = renderToString( < NotFoundPage / > );
+                markup = renderToString( <NotFoundPage /> );
                 res.status(404);
               }
               // render the index template with the embedded React markup
