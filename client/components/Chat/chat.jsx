@@ -14,21 +14,24 @@ const Chat = React.createClass({
   displayName: 'Chat',
 
   propTypes: {
-    data: PropTypes.array.isRequired
+    data:     PropTypes.array.isRequired,
+    loading:  PropTypes.bool.isRequired,
   },
 
   getDefaultProps() {
     return {
-      data: []
+      data: [],
+      loading: true
     };
   },
 
   render() {
+    const { data, loading } = this.props;
     return (
       <div className={ cx('chat') }>
         <Toolbar />
         <div className={ cx('chat-body') }>
-          <MessagesList />
+          <MessagesList data={ data } loading={ loading } />
           <MessageForm />
         </div>
       </div>

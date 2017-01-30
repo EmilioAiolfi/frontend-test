@@ -9,8 +9,8 @@
 //  3. Content
 
 //== 1. Settings Variables
-$chat-text-color:                   #666;
-$chat-bg-color:                     #fff;
+$chat-text-color:                     #666;
+$chat-bg-color:                       #fff;
 $chat-min-width:                      320px;
 $chat-max-width:                      100%;
 $chat-max-width-mq:                   530px;
@@ -22,15 +22,17 @@ $chat-box-shadow:                     0px 0px 12px -2px #9a9a9a;
 $chat-animation-time:                 .800ms;
 $chat-toolbar-height:                 35px;
 $chat-toolbar-width:                  100%;
-$chat-toolbar-font-color:           #ffffff;
-$chat-toolbar-bg-color:             #005DA4;
+$chat-toolbar-font-color:             #ffffff;
+$chat-toolbar-bg-color:               #005DA4;
 $chat-toolbar-title-width:            60%;
 $chat-toolbar-actions-width:          100% - 60%;
 $chat-toolbar-icon-transitions:       fill $chat-animation-time linear;
-$chat-toolbar-icon-hover-color:     #ffffff;
-$chat-message-bg-color:             #DDD;
-$chat-message-form-bg-color:        #f2f2f2;
+$chat-toolbar-icon-hover-color:       #ffffff;
+$chat-message-bg-color:               #DDD;
+$chat-message-form-bg-color:          #f2f2f2;
 $chat-message-form-border:            1px solid #dedede;
+$chat-message-reading-checked-fill:   #005DA4;
+
 //== 2. Settings base
 @import 'base';
 
@@ -132,13 +134,14 @@ $chat-message-form-border:            1px solid #dedede;
     }
   }
   .chat-message-content {
-    float: left;
-    background-color: $chat-message-bg-color;
-    display: block;
+    box-sizing: border-box;
     width: 73%;
+    min-height: 65px;
+    float: left;
     padding: 7px;
     position: relative;
     margin: 0 0 0 15px;
+    background-color: $chat-message-bg-color;
     &:before {
       content: "";
       border-style: solid;
@@ -147,7 +150,7 @@ $chat-message-form-border:            1px solid #dedede;
       border-color: transparent $chat-message-bg-color transparent transparent;
       position: absolute;
       left: -14px;
-      top: 15px;
+      top: 5px;
     }
   }
   .chat-message-user-info {
@@ -181,9 +184,12 @@ $chat-message-form-border:            1px solid #dedede;
   }
   .chat-message-reading-status {
     display: block;
-    margin-top: 10px;
+    margin-top: 19px;
     float: left;
     clear: both;
+    .icon-reading-status {
+      &.icon-reading-status-checked { fill: $chat-message-reading-checked-fill; }
+    }
   }
   &.chat-message-type-sender {
     .chat-user-picture {
