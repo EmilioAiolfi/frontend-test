@@ -1,4 +1,4 @@
-import path from "path";
+import path from 'path';
 
 const CSS_CHUNK_NAMING = '[name]__[local]___[hash:base64:5]';
 const STYLE_LOADERS = [
@@ -11,9 +11,9 @@ const config = {
   PORT: 3000,
   ENV: process.env.NODE_ENV || 'development',
   VIEW: {
-    VIEW_PATH: path.join(__dirname, "/../views/"),
-    ENCODING: "utf8",
-    EXTENSION: "dust"
+    VIEW_PATH: path.join(__dirname, '/../views/'),
+    ENCODING: 'utf8',
+    EXTENSION: 'dust'
   },
   WEBPACK: {
     STYLE_LOADERS: STYLE_LOADERS,
