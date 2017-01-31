@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "NODE_ENV=development babel-node app.js",
+    "prod": "npm run clean && NODE_ENV=production babel-node app.js",
     "build": "npm run clean && NODE_ENV=production webpack -p --config --progress",
     "test": "npm run lint",
     "lint": "eslint -c .eslintrc . --ext .js,.jsx; exit 0",
@@ -20,12 +21,12 @@
     "dustjs-helpers": "^1.7.3",
     "dustjs-linkedin": "^2.7.4",
     "express": "^4.13.3",
-    "react": "^15.4.2",
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-addons-pure-render-mixin": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router": "^3.0.2",
+    "react": "^15.3.2",
+    "react-addons-css-transition-group": "^15.3.2",
+    "react-addons-pure-render-mixin": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.4.1",
     "shell-arguments": "^1.0.4"
   },
   "devDependencies": {

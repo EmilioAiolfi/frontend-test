@@ -159,6 +159,12 @@ Build for `development` environment:
 ```sh
 npm start
 ```
+
+## Prod application:
+Build for `production` environment:
+```sh
+npm run prod
+
 ## Build application:
 Build for `production` environment:
 ```sh
