@@ -129,3 +129,30 @@ $flat-btn-classes: (
   ('default', $btn-default-bg, $btn-default-color, $btn-default-darker-color, $flat-btn-border-size, $flat-ripple-effect-color),
   ('primary', $btn-primary-bg, $btn-primary-color, $btn-primary-darker-color, $flat-btn-border-size, null),
 );
+
+
+//== 8. Chat
+// ==========================================================================
+$chat-text-color:                     $secondary-color-dark;
+$chat-bg-color:                       $white-color;
+$chat-min-width:                      320px;
+$chat-max-width:                      100%;
+$chat-max-width-mq:                   530px;
+$chat-position-right:                 0;
+$chat-position-right-mq:              20px;
+$chat-body-height:                    330px;
+$chat-border:                         1px solid $grey-lighten-2;
+$chat-box-shadow:                     0px 0px 12px -2px $grey-base;
+$chat-animation-time:                 .800ms;
+$chat-toolbar-height:                 35px;
+$chat-toolbar-width:                  100%;
+$chat-toolbar-font-color:             $white-color;
+$chat-toolbar-bg-color:               $primary-color;
+$chat-toolbar-title-width:            60%;
+$chat-toolbar-actions-width:          100% - 60%;
+$chat-toolbar-icon-transitions:       fill $chat-animation-time linear;
+$chat-toolbar-icon-hover-color:       $white-color;
+$chat-message-bg-color:               $grey-lighten-3;
+$chat-message-form-bg-color:          $grey-lighten-4;
+$chat-message-form-border:            1px solid $grey-lighten-2;
+$chat-message-reading-checked-fill:   $primary-color;

@@ -1,5 +1,5 @@
 // ==========================================================================
-// Commons 
+// Commons
 // ==========================================================================
 //
 // Table of Contents:
@@ -12,7 +12,8 @@
 %holder-vertical-middle {
   margin: 0;
   height: 100%;
-  
+  display:inline-block;
+  vertical-align: middle;
   &:before,
   &:after {
     content: '';
