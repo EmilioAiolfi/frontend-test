@@ -1,5 +1,5 @@
 // Libs
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames/bind';
 import PureRenderMixin from 'react-addons-pure-render-mixin';

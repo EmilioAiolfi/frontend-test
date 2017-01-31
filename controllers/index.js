@@ -7,6 +7,7 @@ import { readFileSync } from 'jsonfile';
 import services from './../services';
 import routes from '../client/routes';
 import NotFoundPage from '../client/components/NotFoundPage';
+import CONFIG from './../config';
 
 module.exports = {
   renderTemplate: function (req, res) {

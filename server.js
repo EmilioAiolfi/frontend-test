@@ -11,8 +11,6 @@ import { webpackMiddleware, webpackHotMiddleware } from './webpack/webpackMiddle
 import routes from './routes';
 import CONFIG from './config';
 
-global.CONFIG = CONFIG;
-
 const app = new express();
 const isDev = CONFIG.ENV === 'development';
 
