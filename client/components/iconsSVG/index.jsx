@@ -41,14 +41,20 @@ const Icon = React.createClass({
   },
 
   render() {
-    const { className, fill, glyph, width, height } = this.props;
-    
+    const { className, fill, glyph, width, height, ...props } = this.props;
+
     const iconClass = cx('icon', {
       [className]: className
     });
-    
+
     return (
-      <svg className={ iconClass } width={ width } height={ height } fill={ fill } role='img'>
+      <svg
+        className={ iconClass }
+        width={ width }
+        height={ height }
+        fill={ fill }
+        role='img'
+        { ...props }>
         <use xlinkHref={`#${glyph}`} />
       </svg>
     );

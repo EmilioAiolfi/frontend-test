@@ -9,29 +9,29 @@
 //  3. Content
 
 //== 1. Settings Variables
-$chat-text-color:                     #666;
-$chat-bg-color:                       #fff;
-$chat-min-width:                      320px;
-$chat-max-width:                      100%;
-$chat-max-width-mq:                   530px;
-$chat-position-right:                 0;
-$chat-position-right-mq:              20px;
-$chat-body-height:                    330px;
-$chat-border:                         1px solid #DCDCDC;
-$chat-box-shadow:                     0px 0px 12px -2px #9a9a9a;
-$chat-animation-time:                 .800ms;
-$chat-toolbar-height:                 35px;
-$chat-toolbar-width:                  100%;
-$chat-toolbar-font-color:             #ffffff;
-$chat-toolbar-bg-color:               #005DA4;
-$chat-toolbar-title-width:            60%;
-$chat-toolbar-actions-width:          100% - 60%;
-$chat-toolbar-icon-transitions:       fill $chat-animation-time linear;
-$chat-toolbar-icon-hover-color:       #ffffff;
-$chat-message-bg-color:               #DDD;
-$chat-message-form-bg-color:          #f2f2f2;
-$chat-message-form-border:            1px solid #dedede;
-$chat-message-reading-checked-fill:   #005DA4;
+$chat-text-color:                     #666 !default;
+$chat-bg-color:                       #fff !default;
+$chat-min-width:                      320px !default;
+$chat-max-width:                      100% !default;
+$chat-max-width-mq:                   530px !default;
+$chat-position-right:                 0 !default;
+$chat-position-right-mq:              20px !default;
+$chat-body-height:                    330px !default;
+$chat-border:                         1px solid #DCDCDC !default;
+$chat-box-shadow:                     0px 0px 12px -2px #9a9a9a !default;
+$chat-animation-time:                 .800ms !default;
+$chat-toolbar-height:                 35px !default;
+$chat-toolbar-width:                  100% !default;
+$chat-toolbar-font-color:             #ffffff !default;
+$chat-toolbar-bg-color:               #005DA4 !default;
+$chat-toolbar-title-width:            60% !default;
+$chat-toolbar-actions-width:          100% - 60% !default;
+$chat-toolbar-icon-transitions:       fill $chat-animation-time linear !default;
+$chat-toolbar-icon-hover-color:       #ffffff !default;
+$chat-message-bg-color:               #DDD !default;
+$chat-message-form-bg-color:          #f2f2f2 !default;
+$chat-message-form-border:            1px solid #dedede !default;
+$chat-message-reading-checked-fill:   #005DA4 !default;
 
 //== 2. Settings base
 @import 'base';
@@ -57,6 +57,14 @@ $chat-message-reading-checked-fill:   #005DA4;
     max-width: $chat-max-width-mq;
     right: $chat-position-right-mq;
   }
+
+  &.set-action-open {
+    display: block;
+  }
+  &.set-action-close {
+    display: none;
+  }
+
 }
 
 .chat-toolbar {
@@ -97,6 +105,13 @@ $chat-message-reading-checked-fill:   #005DA4;
       fill: $chat-toolbar-icon-hover-color;
     }
   }
+
+  .chat-toolbar-btn-restore {
+    display: none;
+    @include breakpoint("tablet-small") {
+      display: inline-block;
+    }
+  }
 }
 
 .chat-body {
@@ -104,6 +119,14 @@ $chat-message-reading-checked-fill:   #005DA4;
   width: 100%;
   height: 100%;
   color: $chat-text-color;
+  transition: height $chat-animation-time linear;
+
+  &.set-action-maximize { height: 100%; }
+  &.set-action-minimize {
+    height: 0;
+    overflow: hidden;
+  }
+
 }
 
 .chat-messages-list {
@@ -113,17 +136,18 @@ $chat-message-reading-checked-fill:   #005DA4;
   margin-top: 10px;
   height: calc(100% - 145px);
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   @include breakpoint("tablet-small") {
     height: $chat-body-height;
+    font-size: 14px;
   }
 }
 
 .chat-message-item {
-  overflow: auto;
+  overflow: hidden;
   margin: 10px 0;
   .chat-user-picture {
     float: left;
