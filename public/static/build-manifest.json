@@ -1,7 +1,4 @@
 {
-  "app.css": "/static/style.app.28153be162ff2b2d0876.css",
-  "app.js": "/static/app.28153be162ff2b2d0876.js",
-  "app.js.map": "/static/app.js.map",
-  "vendor.js": "/static/bundle.vendor.js",
-  "vendor.js.map": "/static/vendor.js.map"
+  "app.js": "/static/app.js",
+  "vendor.js": "/static/bundle.vendor.js"
 }
