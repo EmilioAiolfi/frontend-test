@@ -16,11 +16,12 @@ const configPROD = {
   },
 
   output: {
+    publicPath: '/static/dist/',
     filename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].js.map',
     chunkFilename: '[name].[chunkhash].chunk.js'
   },
-  
+
   target: 'web',
 
   module: {
@@ -38,7 +39,7 @@ const configPROD = {
       filename: 'bundle.[name].js',
       minChunks: Infinity
     }),
-    
+
     new ExtractTextPlugin('style.[name].[chunkhash].css', {
       disable: false,
       allChunks: true //extract all css from async chunks as well

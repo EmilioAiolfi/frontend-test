@@ -10,7 +10,7 @@ import classnames from 'classnames/bind';
 
 const __svg__ = {
   path: '../../images/svg/**/*.svg',
-  name: 'static/[hash].icon.svg'
+  name: '[hash].icon.svg'
 };
 
 svgxhr(__svg__);
