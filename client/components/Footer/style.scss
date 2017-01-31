@@ -29,9 +29,12 @@ $footer-list-item-border: 1px solid #d5d5d5 !default;
 }
 
 .brand {
-  float: left;
-  margin: 0;
   @extend %holder-vertical-middle;
+  display: none;
+  @include breakpoint('tablet') {
+    display: inline-block;
+    padding: 0 0 0 10px;
+  }
 }
 
 .logo {
@@ -40,17 +43,28 @@ $footer-list-item-border: 1px solid #d5d5d5 !default;
 }
 
 .footer-list {
-  font-size: 12px;
+  font-size: 11px;
   display: inline-block;
+  margin: 0;
+  padding: 3px;
+  @include breakpoint('tablet') {
+    font-size: 12px;
+    padding: 0;
+  }
 
   .footer-list-item {
     display: inline-block;
-    margin: 3px 0;
-    padding: 0 13px;
+    margin: 0;
+    padding: 0 5px;
     white-space: nowrap;
     border-right: $footer-list-item-border;
+    @include breakpoint('tablet') {
+      font-size: 12px;
+      padding: 0 0 0 20px;
+      margin: 3px 0;
+    }
     &:last-child {
-      border-right: 0; 
+      border-right: 0;
     }
   }
 }
