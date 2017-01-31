@@ -7,7 +7,6 @@ import ManifestPlugin from 'webpack-manifest-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import SvgStore from 'webpack-svgstore-plugin';
 
-console.log(path.resolve(__dirname, '../client', 'styles'));
 const configBase = {
   context: __dirname,
   entry: {

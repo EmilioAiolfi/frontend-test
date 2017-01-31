@@ -43,32 +43,32 @@ node app.js
 Agora você já possui a configuração necessária, podemos começar.
 
 ## Estrutura
-O repositório possui a seguinte estrutura:  
+O repositório possui a seguinte estrutura:
 ```md
-├── config/ 
-│   └── index.js 
-├── controllers/ 
-│   └── index.js  
-├── routes  
-│   └── index.js  
-├── services  
-│   ├── index.js  
-│   └── templatePath.js  
-├── views/  
-├── public/  
-│   ├── images/  
-│   ├── javascript/  
-│   ├── styles/  
-│   └── json/  
-│       └── talk.json  
-├── layout/  
-│   ├── test-front.psd  
-│   └── test-front-320.psd  
-├── .bowerrc  
-├── .gitignore  
-├── app.js  
-├── package.json  
-└── README.md  
+├── config/
+│   └── index.js
+├── controllers/
+│   └── index.js
+├── routes
+│   └── index.js
+├── services
+│   ├── index.js
+│   └── templatePath.js
+├── views/
+├── public/
+│   ├── images/
+│   ├── javascript/
+│   ├── styles/
+│   └── json/
+│       └── talk.json
+├── layout/
+│   ├── test-front.psd
+│   └── test-front-320.psd
+├── .bowerrc
+├── .gitignore
+├── app.js
+├── package.json
+└── README.md
 ```
 
 ### Rotas
@@ -117,3 +117,56 @@ Avaliaremos o resultado seguindo esses pontos:
 - Clareza e limpeza do código
 - Semântica HTML
 - Lógica de programação
+
+# Considerations
+
+## Features
+- [React Uniiversal]
+- [React - NO FLUX](https://github.com/facebook/react)
+- [Express](http://expressjs.com)
+- [ES2015](https://babeljs.io/docs/learn-es2015)
+- [React Router](https://github.com/reactjs/react-router)
+- [CSS modules](https://github.com/css-modules/css-modules)
+- [SASS](http://sass-lang.com)
+- [DUSTJS] (http://www.dustjs.com/)
+
+## Tools
+- [Webpack](https://github.com/webpack/webpack)
+    - [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+- [Babel 6](https://github.com/babel/babel)
+    - [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages/babel-preset-es2015)
+    - [babel-preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)
+    - [babel-preset-react-hmre](https://github.com/babel/babel/tree/master/packages/babel-preset-react-hmre)
+- [ESLint](https://github.com/eslint/eslint)
+    - [babel-eslint](https://github.com/babel/babel-eslint)
+    - [eslint-loader](https://github.com/MoOx/eslint-loader)
+
+
+## Pre-requisites:
+- node: `>=4.3.0 <5.0.0 || >=5.10`
+- npm: `>=3`
+
+## Install dependencies:
+Install all project dependencies:
+```sh
+npm install
+```
+
+## Running
+
+### Start application:
+Build for `development` environment:
+```sh
+npm start
+```
+## Build application:
+Build for `production` environment:
+```sh
+npm run build
+```
+#### To preview check **[http://localhost:3000/site/home/chat/](http://localhost:3000/site/home/chat/)**
+
+## Testing
+```sh
+npm run test
+```

@@ -97,8 +97,8 @@ module.exports = {
                 markup = renderToString( <RouterContext { ...renderProps } />);
               } else {
                 // otherwise we can render a 404 page
-                markup = renderToString( <NotFoundPage /> );
                 res.status(404);
+                markup = renderToString( <NotFoundPage /> );
               }
               // render the index template with the embedded React markup
               res.render(filename, {
