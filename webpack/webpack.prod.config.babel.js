@@ -1,10 +1,12 @@
 'use strict';
 
 import CONFIG from '../config';
+import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import validate, { Joi } from 'webpack-validator';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
 import baseConfig from './webpack.base.config.babel';
 
 
@@ -16,7 +18,8 @@ const configPROD = {
   },
 
   output: {
-    publicPath: '/static/dist/',
+    path: path.resolve(__dirname, '../public', 'static', 'build'),
+    publicPath: '/static/build/',
     filename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].js.map',
     chunkFilename: '[name].[chunkhash].chunk.js'
@@ -34,6 +37,12 @@ const configPROD = {
   },
 
   plugins: [
+    new ManifestPlugin({
+      fileName: 'build-manifest.json',
+      publicPath: '/static/build/',
+      writeToFileEmit: true
+    }),
+
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'bundle.[name].js',
@@ -52,13 +61,7 @@ const configPROD = {
         screw_ie8: true, // React doesn't support IE8
         warnings: false,
       },
-      mangle: {
-        screw_ie8: true,
-      },
-      output: {
-        comments: false,
-        screw_ie8: true,
-      },
+
       sourcemap: false,
       beautify: false,
       dead_code: true
