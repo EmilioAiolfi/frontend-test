@@ -68,8 +68,6 @@ const Chat = React.createClass({
   },
 
   _setActions(action) {
-    console.log('action', action);
-
     if (action.hasOwnProperty('isMaximized'))
       this.setState({
         setActionMaximized: action.isMaximized,
@@ -79,7 +77,6 @@ const Chat = React.createClass({
         setActionClose: action.close
       });
     }
-
   },
 
   render() {

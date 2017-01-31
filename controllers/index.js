@@ -9,15 +9,24 @@ import routes from '../client/routes';
 import NotFoundPage from '../client/components/NotFoundPage';
 import CONFIG from './../config';
 
+const isDev = CONFIG.ENV !== 'production';
+
 module.exports = {
   renderTemplate: function (req, res) {
 
     let markup;
+    let manifestPath;
     let filename = services.templatePath.getFilenameByRoute(
       req.params[0],
       CONFIG.VIEW.EXTENSION
     );
-    const manifestPath = `${process.cwd()}/public/static/build-manifest.json`;
+
+    if (isDev) {
+      manifestPath = path.resolve(__dirname, '../public/static/build-manifest.json'); // `${process.cwd()}/public/static/build-manifest.json`;
+    } else {
+      manifestPath = path.resolve(__dirname, '../public/static/build/build-manifest.json');
+    }
+
     const manifest = readFileSync(manifestPath);
     const styleBundle = manifest['app.css'];
     const jsBundle = manifest['app.js'];

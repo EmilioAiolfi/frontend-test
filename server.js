@@ -12,7 +12,7 @@ import routes from './routes';
 import CONFIG from './config';
 
 const app = new express();
-const isDev = CONFIG.ENV === 'development';
+const isDev = CONFIG.ENV !== 'production';
 
 routes(app);
 
